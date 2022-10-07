@@ -18,4 +18,7 @@ int motor_control_get_rotation(void);
 void motor_control_break(void);
 void motor_control_stop(void);
 
+//for test
+void _motor_control_update_pwm(int sector, int pwm_value);
+
 #endif /* INC_MOTOR_CONTROL_H_ */

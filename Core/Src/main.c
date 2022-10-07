@@ -149,7 +149,7 @@ int main(void)
   int old_pos = 0;
   while (1){
 
-	  motor_control_pwm_update_callback(pwm);
+	  //motor_control_pwm_update_callback(pwm);
 	  for (volatile int i = 0; i < 100000; i++);
 
 
@@ -211,11 +211,7 @@ void SystemClock_Config(void)
   LL_RCC_SetAPB1Prescaler(LL_RCC_APB1_DIV_1);
   LL_RCC_SetAPB2Prescaler(LL_RCC_APB2_DIV_1);
 
-  //LL_Init1msTick(80000000);
-
-  //uglu
-  //!\todo : use other timer or undersample the magnetic encoder
-  LL_InitTick(80000000, 100U);
+  LL_Init1msTick(80000000);
   LL_SetSystemCoreClock(80000000);
 }
 

@@ -74,7 +74,8 @@ static inline int _motor_control_get_hall(void){
 }
 
 
-static inline void _motor_control_update_pwm(int sector, int pwm_value){
+//static inline
+void _motor_control_update_pwm(int sector, int pwm_value){
 	static const int grounded_pin[6] = {1, 1, 0, 0, 2, 2};
 	static const int HZ_pin[6]       = {2, 0, 1, 2, 0, 1};
 	static const int pmw_pin[6]      = {0, 2, 2, 1, 1, 0};
@@ -133,6 +134,7 @@ void EXTI_IRQHandler(void){
 
 	_motor_control_update_sector();
 	_motor_control_update_pwm(_Sector, _Pwm_value);
+
 }
 
 void motor_control_pwm_update_callback(int pwm){
