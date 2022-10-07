@@ -1,0 +1,7 @@
+motor_control.c:50:6:motor_control_break	8	static
+motor_control.c:56:6:motor_control_stop	8	static
+motor_control.c:106:6:_motor_control_update_sector	4	static
+motor_control.c:128:6:EXTI_IRQHandler	24	static
+motor_control.c:138:6:motor_control_pwm_update_callback	16	static
+motor_control.c:143:6:motor_control_reset_rotation	0	static
+motor_control.c:147:5:motor_control_get_rotation	0	static
