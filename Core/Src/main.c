@@ -143,7 +143,7 @@ int main(void)
   const int speed[7] = {-70, -80, -70, 0, 70, 100, 0};
 
   LL_SPI_DisableIT_TXE(SPI2);
-  LL_SPI_DisableIT_RXNE(SPI2);
+  LL_SPI_EnableIT_RXNE(SPI2);
 
   int new_pos = 0;
   int old_pos = 0;
@@ -211,8 +211,11 @@ void SystemClock_Config(void)
   LL_RCC_SetAPB1Prescaler(LL_RCC_APB1_DIV_1);
   LL_RCC_SetAPB2Prescaler(LL_RCC_APB2_DIV_1);
 
-  LL_Init1msTick(80000000);
+  //LL_Init1msTick(80000000);
 
+  //uglu
+  //!\todo : use other timer or undersample the magnetic encoder
+  LL_InitTick(80000000, 100U);
   LL_SetSystemCoreClock(80000000);
 }
 
